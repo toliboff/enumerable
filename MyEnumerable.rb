@@ -17,4 +17,11 @@ module MyEnumerable
     false
   end
 
+  def filter(&block) 
+    result = []
+    self.each do |element|
+      result<<element if block.call(element)==true
+    end
+    result
+  end
 end
