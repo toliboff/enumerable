@@ -7,4 +7,14 @@ module MyEnumerable
     true
   end
 
+  def any?
+    self.each do |element|
+      check = yield(element)
+      if check
+        true
+      end
+    end
+    false
+  end
+
 end
